@@ -17,7 +17,7 @@ function WishList() {
       })
       .then((res) => setWishlist(res.data))
       .catch((err) => console.error("Failed to load wishlist:", err));
-  }, []);
+  }, [navigate]);
 
   const removeFromWishlist = async (productId) => {
     try {
