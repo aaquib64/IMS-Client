@@ -83,7 +83,7 @@ function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md py-3 px-4 space-y-3">
-          <Link to="/about" className="block text-gray-700 hover:text-red-500">
+          {/* <Link to="/about" className="block text-gray-700 hover:text-red-500">
             About Us
           </Link>
           <Link
@@ -91,7 +91,7 @@ function Navbar() {
             className="block text-gray-700 hover:text-red-500"
           >
             Contact Us
-          </Link>
+          </Link> */}
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
