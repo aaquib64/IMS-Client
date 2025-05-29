@@ -106,11 +106,11 @@ function Navbar() {
                   Login
                 </button>
               </Link>
-              <Link to="/signup">
+              {/* <Link to="/signup">
                 <button className="w-full text-center px-4 py-1 border border-gray-400 text-gray-700 hover:bg-gray-100 rounded">
                   Register
                 </button>
-              </Link>
+              </Link> */}
             </div>
           )}
         </div>

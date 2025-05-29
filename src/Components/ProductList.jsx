@@ -2,15 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+
 
 function ViewProducts() {
   const [products, setProducts] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(true);
+ 
   const navigate = useNavigate();
-  // const { _id } = useParams();
+  
 
   const token = localStorage.getItem("token");
 
@@ -31,22 +30,22 @@ function ViewProducts() {
     }
   };
 
-  const handleEdit = (product) => {
-    const newName = prompt("Enter new product name:", product.productName);
-    if (newName) {
-      axios
-        .put(`https://ims-server-r467.onrender.com/products/${product._id}`, {
-          ...product,
-          productName: newName,
-        })
-        .then((res) => {
-          setProducts(
-            products.map((p) => (p._id === product._id ? res.data : p))
-          );
-        })
-        .catch((err) => console.error("Failed to update product:", err));
-    }
-  };
+  // const handleEdit = (product) => {
+  //   const newName = prompt("Enter new product name:", product.productName);
+  //   if (newName) {
+  //     axios
+  //       .put(`https://ims-server-r467.onrender.com/products/${product._id}`, {
+  //         ...product,
+  //         productName: newName,
+  //       })
+  //       .then((res) => {
+  //         setProducts(
+  //           products.map((p) => (p._id === product._id ? res.data : p))
+  //         );
+  //       })
+  //       .catch((err) => console.error("Failed to update product:", err));
+  //   }
+  // };
 
   useEffect(() => {
     const token = localStorage.getItem("token"); // or use cookies/session
@@ -57,7 +56,7 @@ function ViewProducts() {
       .get("https://ims-server-r467.onrender.com/list")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error("Failed to fetch products:", err));
-  }, []);
+  }, [navigate]);
 
   // Fetch wishlist on load
   // useEffect(() => {
