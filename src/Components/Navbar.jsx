@@ -83,15 +83,13 @@ function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md py-3 px-4 space-y-3">
-          {/* <Link to="/about" className="block text-gray-700 hover:text-red-500">
-            About Us
-          </Link>
           <Link
-            to="/contact"
-            className="block text-gray-700 hover:text-red-500"
+            to="/wishlist"
+            className="text-center px-4 py-1 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded"
           >
-            Contact Us
-          </Link> */}
+            My Wishlist
+          </Link>
+
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
@@ -102,7 +100,7 @@ function Navbar() {
           ) : (
             <div className="flex flex-col space-y-2 mt-2">
               <Link to="/login">
-                <button className="w-full text-center px-4 py-1 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded">
+                <button className=" text-center px-4 py-1 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white rounded">
                   Login
                 </button>
               </Link>
